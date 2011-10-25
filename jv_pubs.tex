@@ -1,0 +1,90 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage[nodayofweek]{datetime} % format date and time
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{parskip}
+
+% hyperref and bibentry conflict workaround
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+
+\usepackage{bibentry}
+
+\usepackage[xetex]{hyperref}
+\hypersetup{
+  letterpaper,
+  pdfborder={0 0 0}
+}
+\usepackage[letterpaper]{geometry}
+\geometry{hmargin={1in,1in},vmargin={1in,1in}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\headsep = 10pt
+%\footskip = 15pt
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\chead{}
+\lhead{\footnotesize \bfseries Publications}
+\rhead{\footnotesize \bfseries Jeremy Van Cleve}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+
+\usepackage[explicit]{titlesec}
+\titleformat{\section}{\large \bfseries \scshape}{}{0ex}{#1}
+\titlespacing{\section}{0pt}{2.0ex plus 0.25ex minus 0.25ex}{0.5ex plus 0.1ex minus 0.1ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% XeLaTeX font settings: COMMENT OUT IF NOT RUNNING XeLaTeX
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Adobe Garamond Pro}
+\setmathrm{Adobe Garamond Pro}
+\setsansfont[Scale=MatchLowercase]{Myriad Pro}
+\setmonofont[Scale=MatchUppercase]{Monaco}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% hyperref and bibentry conflict workaround
+  \begingroup
+    \makeatletter
+    \let\@bibitem\saved@bibitem
+    \nobibliography{jv_pubs}
+  \endgroup
+
+\bibliographystyle{cv_ecol_lett}
+
+\section{Publications}
+
+\bibentry{Van-Cleve2011a}
+
+\bibentry{Akcay2011}
+
+\bibentry{Brandvain2011}
+
+\bibentry{Liberman2011}
+
+\bibentry{Van-Cleve2010}
+
+\bibentry{Akcay2009}
+
+\bibentry{Salathe2009}
+
+\bibentry{Van-Cleve2008}
+
+\bibentry{Van-Cleve2007}
+
+\bibentry{Guralnick2005}
+
+\begin{center} 
+\vspace{\fill}
+\small \it last modified \today
+\end{center}
+
+\end{document}

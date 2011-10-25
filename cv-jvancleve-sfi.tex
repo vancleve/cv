@@ -1,0 +1,304 @@
+% Copyright (C) 2008 Jeremy Van Cleve
+%
+%%---------------------------------------------------------------------------%
+%
+% Notes:
+%
+% * To create a new page use: \newpage \opening
+%
+% * res.cls includes an \address{} command which can be used up to twice,
+%   but my address is too long for the format it uses.
+%
+% * Alternate documentclass statement to put headings in margin:
+%   \documentclass[margin,line,11pt,final]{res}
+%
+% * Can divide publication/presentation list into subsections by year:
+%   \section{\bf\small\hspace{8mm}2006}
+%
+%%----------------------------------------------------------------------------%
+
+\documentclass[overlapped,line]{res}
+\usepackage{paralist}
+
+% hyperref and bibentry conflict workaround
+\makeatletter
+\let\saved@bibitem\@bibitem
+\makeatother
+ 
+%\usepackage{tabularx}
+\usepackage{bibentry}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{hanging}
+\usepackage[nodayofweek]{datetime}
+
+% XeLaTeX font settings
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Adobe Garamond Pro}
+\setsansfont{Lucida Sans}
+\setmonofont{Monaco}
+
+\usepackage[letterpaper]{geometry}
+\geometry{hmargin={1in,1.5in},vmargin={1in,0.8in}}
+\hypersetup{
+  colorlinks,
+  urlcolor=black,
+  pdftitle={Curriculum Vitae},
+  pdfauthor={Jeremy Van Cleve},
+  pdfcreator={XeLaTeX},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={evolutionary biology ecology population genetics modelling}
+}
+
+\sectionskip=2.5ex plus 1ex minus .2ex
+\parskip=2.5ex plus 1ex minus .2ex
+
+%%===========================================================================%%
+
+\begin{document}
+
+%---------------------------------------------------------------------------
+% Document Specific Customizations
+
+% Change list  indentation
+\setdefaultleftmargin{0em}{2.2em}{1.87em}{1.7em}{1em}{1em}
+
+% Use large bold font for printed name at top of pages
+\renewcommand{\namefont}{\large\textbf}
+
+% Custom commands
+\newcommand{\cbox}[2]{\parbox{#1}{\centering #2}}
+
+% hyperref and bibentry conflict workaround
+  \begingroup
+    \makeatletter
+    \let\@bibitem\saved@bibitem
+    \nobibliography{jv_pubs}
+  \endgroup
+  
+\bibliographystyle{cv_ecol_lett}
+
+%---------------------------------------------------------------------------
+
+\name{\Large \scshape Jeremy Van Cleve}
+
+\begin{resume}
+
+\begin{center}
+\vspace{-1ex}
+\begin{tabular}{r@{\hspace{3em}}l}
+  Santa Fe Institute           & Phone: (505) 946-2743 \\
+  1399 Hyde Park Road     		  & Fax: (505) 982-0565\\
+  Santa Fe, NM & {\footnotesize \url{vancleve@santafe.edu}} \\
+  87501              & 
+{\footnotesize \url{www.santafe.edu/~vancleve}} \\
+\end{tabular}
+\end{center}
+
+
+%---------------------------------------------------------------------------
+
+\section{\bf \large Education}
+
+\begin{ncolumn}{2}
+2009 Stanford University & Ph.D. in Biological Sciences \\
+2003 Oberlin College & B.A. with majors in Mathematics and Biology
+\end{ncolumn}
+
+\section{\bf \large Research and Technical Experience}
+\begin{format}
+\title{l}\dates{r}\\
+\employer{l}\location{r}\\
+\body\\
+\end{format}
+
+\title{Omidyar Postdoctoral Fellow}
+\dates{2009--present}
+\employer{Santa Fe Institute}
+\location{Santa Fe, NM}
+\begin{position} \\[-4mm] 
+Postdoctoral research in evolutionary biology and ecology \end{position}
+
+\title{Ph.D. Student}
+\dates{2004--2009}
+\employer{Stanford University \\ with Professor Marcus W. Feldman}
+\location{Stanford, CA}
+\begin{position} \\[-4mm] 
+\\ Ph.D. research in evolutionary biology and population genetics 
+\end{position}
+
+\title{Professional Research Assistant}
+\dates{2003-2004}
+\employer{University of Colorado at Boulder \\ 
+with Professors Robert Guralnick (RG) \\
+and Professor Arthur Pardi (AP)}
+\location{Boulder, CO} 
+\begin{position} \\[-4mm] 
+\\ Studied bird species richness in Rocky Mountains using regional taxonomic databases (RG), \\
+and wrote software to simulate and analyze data from single-molecule fluorescence experiments (AP).
+\end{position}
+
+% \title{Professional Research Assistant}
+% \dates{2003-2004}
+% \employer{University of Colorado at Boulder  \\ with Professor Arthur Pardi}
+% \location{Boulder, CO} 
+% \begin{position} \\[-4mm] 
+% \\ Wrote software to simulate and analyze data from single-molecule fluorescence experiments.
+% \end{position} 
+
+% \title{NSF Research Experience for Undergrads}
+% \dates{Summer 2002}
+% \employer{University of Colorado at Boulder \\ with Professor Roger Pilke Jr.}
+% \location{Boulder, CO}
+% \begin{position} \\[-4mm] 
+% \\ Studied the scientific, political, and philosophical elements of climate change.\\
+% Created policy oriented analysis of the role of prediction in the Yucca Mountain Project. 
+% \end{position}
+
+% \title{NSF Research Experience for Undergrads}
+% \dates{Summer 2001}
+% \employer{The Santa Fe Institute with Dr. Ludo Pagie}
+% \location{Santa Fe, NM}
+% \begin{position} \\[-4mm] 
+% Project title: “Diversity and evolutionary dynamics in an iron-deprived microbial community” \\
+% Created spatially explicit and analytical simulations in order to study evolutionary dynamics. 
+% \end{position}
+
+% \title{Intern}
+% \dates{Summers 1999 \& 2000}
+% \employer{Los Alamos National Laboratory \\ with Dr. Catherine Macken}
+% \location{Los Alamos, NM}
+% \begin{position} \\[-4mm] 
+% \\ Wrote phylogenetic software packages in Perl and revamped old packages for use over the Internet.
+% \end{position}
+
+%---------------------------------------------------------------------------
+
+\section{\bf \large Teaching Experience}
+
+\begin{itemize}[$\ast$]
+\item Biology Department Teaching Assistant Training Program: Electronic Resource Development
+\item Teaching Consultant for the Stanford Center for Teaching and Learning; 2007--2009
+\item Guest Lecturer and Teaching Assistant, Fundamental of Molecular Evolution (Biosci 113/244); Spring 2008
+\item Guest Lecturer, Theoretical Population Genetics (Biosci 183); Winter 2008
+\item Teaching Assistant, Plant Biology, Evolution, and Ecology (Biosci 43); Spring 2006
+\item Teaching Assistant, Biostatistics (Biosci 141); Winter 2005
+\end{itemize}
+
+%---------------------------------------------------------------------------
+
+\section{\bf \large Awards and Honors}
+\vspace{1ex}
+
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{$\ast$ }r@{}l@{\hspace{2ex}}l}
+2010 & & Samuel Karlin Prize in Mathematical Biology (Stanford University) \\ 
+2009 & & National Institutes of Health Postdoctoral Fellowship (declined) \\
+2008&--2009 & National Institutes of Health NLM Training Grant Appointment \\
+2008 & & American Society of Naturalists Graduate Student Travel Award for Evolution Meeting \\
+2007 & & Stanford University Centennial Teaching Award \\
+2006 & & Stanford University Department of Biological Sciences Excellence in Teaching Award \\
+2004 & & Anne T. and Robert M. Bass Stanford University Graduate Fellowship \\
+2002 & & Elected Phi Beta Kappa \\
+2001 & & Barry M. Goldwater Scholarship \\
+%2003 & & Oberlin College Jason Chicoine Memorial Prize in Biology \\
+%2002 & & Oberlin College Joshua Levitt Memorial Prize in Biology \\
+%2001 & & Oberlin Biology Department Sophomore Achievement Award \\
+%2001 & & Oberlin Chemistry Department Jewett Prize \\
+1999&--2003 & Oberlin College John Stern Science Scholarship
+\end{tabular}
+
+%------------------------------------------------------------------------------
+
+\newpage
+\opening
+\section{\bf \large Publications}
+
+\bibentry{Van-Cleve2011a}
+
+\bibentry{Akcay2011}
+
+\bibentry{Liberman2011}
+
+\bibentry{Van-Cleve2010}
+
+\bibentry{Akcay2009}
+
+\bibentry{Salathe2009}
+
+\bibentry{Van-Cleve2008}
+
+\bibentry{Van-Cleve2007}
+
+\bibentry{Guralnick2005}
+
+%------------------------------------------------------------------------------
+
+%%===========================================================================%%
+
+\section{\bf \large Presentations}
+
+\hangpara{3em}{1}
+``Prosocial preferences and the evolution of behavior within and between groups'' \\
+University of New Mexico, Department of Computer Science Invited Talk, November 2010
+
+\hangpara{3em}{1}
+``Stochastic switching and the evolution of mutation in asymmetric fitness landscapes '' \\
+Evolution Conference, concurrent session talk, June 2010
+
+\hangpara{3em}{1}
+``Evolution and epigenetics: genomic imprinting in mammals and stochastic switching in bacteria'' \\
+National Institute for Mathematical Biology and Synthesis Invited Talk, March 2010
+
+\hangpara{3em}{1}
+``Regard for others: the economics and evolution of empathy'' \\
+Santa Fe Institute Holiday Tea Talk, December 2009
+
+\hangpara{3em}{1}
+``The Evolution of Cooperation by Mutual Regard'' \\
+Evolution Conference, concurrent session talk, June 2008. \\
+EVO-WIBO Conference, session talk, April 2008. 
+
+\hangpara{3em}{1}
+``Sex-specific selection, sex-linkage and dominance in genomic imprinting'' \\
+Evolution Conference, concurrent session talk, June 2007. 
+
+% \hangpara{3em}{1}
+% ``Sex Role Dynamics: a game theoretic approach to modeling parental investment and sex-role reversal'' \\
+% Stanford University, graduate student talk, May 24th, 2005.
+
+\newpage
+%%---------------------------------------------------------------------------%%
+
+\section{\bf \large Academic Service}
+\begin{itemize}[$\ast$]
+\item Member of the American Society of Naturalists and the Society for the Study of Evolution.
+\item \textit{Ad hoc} reviewer: \textit{Genetics}, \textit{Theoretical Population Biology}, \textit{Proceedings of the Royal Society B}, \textit{The American Naturalist} 
+\end{itemize}
+
+%%---------------------------------------------------------------------------%%
+
+\section{\bf \large SFI Community Service}
+\begin{itemize}[$\ast$]
+\item Research overview for Nanyang Technological University representatives. \formatdate{04}{12}{2009}.
+\item Holiday Tea Talk. \formatdate{10}{12}{2009}.
+\item Research overview for United States Air Force Academy Cadets. \formatdate{21}{10}{2010}.
+\item Postdoctoral representative to Omidyar Fellow selection process. 2009--2010.
+\item Co-facilitator of monthly postdoctoral meetings. 2010--present.
+\item Postdoctoral representative to Faculty meetings: 2010--present.
+\item Institutional Review Board. 2010--present.
+\end{itemize}
+
+%% ---------------------------------------------------------------------------%%
+
+\begin{center} 
+\vspace{\fill}
+\small \it last modified \today
+\end{center}
+
+\end{resume}
+
+\end{document}
+
+%%===========================================================================%%
