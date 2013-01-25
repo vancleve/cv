@@ -28,14 +28,14 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chead{}
-\lhead{\footnotesize \bfseries Publications}
+\lhead{}
 \rhead{\footnotesize \bfseries Jeremy Van Cleve}
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
 
 \usepackage[explicit]{titlesec}
-\titleformat{\section}{\large \bfseries \scshape}{}{0ex}{#1}
+\titleformat{\section}{\large \bfseries \scshape}{}{0ex}{#1\\[-1ex]\rule{0.5\textwidth}{0.4pt}}
 \titlespacing{\section}{0pt}{2.0ex plus 0.25ex minus 0.25ex}{0.5ex plus 0.1ex minus 0.1ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,25 +62,21 @@
 
 \section{Publications}
 
-\bibentry{Van-Cleve2011a}
+{ \setlength{\parskip}{2ex}
+\bibentry{Van-Cleve2012b}
 
-\bibentry{Akcay2011}
+\input{pubs_list.tex}
+}
 
-\bibentry{Brandvain2011}
+\section{Preprints and manuscripts in preparation}
 
-\bibentry{Liberman2011}
+{ \setlength{\parskip}{2ex}
+\bibentry{Van-Cleve2012d}
 
-\bibentry{Van-Cleve2010}
+\bibentry{Van-Cleve2012a}
+}
 
-\bibentry{Akcay2009}
 
-\bibentry{Salathe2009}
-
-\bibentry{Van-Cleve2008}
-
-\bibentry{Van-Cleve2007}
-
-\bibentry{Guralnick2005}
 
 \begin{center} 
 \vspace{\fill}
