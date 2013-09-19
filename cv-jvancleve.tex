@@ -27,14 +27,14 @@
 
 \usepackage{bibentry}
 \usepackage{natbib}
-\usepackage{hyperref}
+\usepackage{hyperref,doi}
 \usepackage{hanging}
 \usepackage[nodayofweek]{datetime}
 
 % \usepackage{tabularx}
 
 \usepackage{paralist}
-\setlength{\plitemsep}{0.5ex}
+\setlength{\plitemsep}{1ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % XeLaTeX font settings: COMMENT OUT IF NOT RUNNING XeLaTeX
@@ -47,7 +47,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \usepackage[letterpaper]{geometry}
-\geometry{hmargin={1in,1.3in},vmargin={0.75in,0.75in},headheight=10pt}
+\geometry{hmargin={1in,1.3in},vmargin={1in,1in},headheight=10pt}
 \hypersetup{
   colorlinks,
   urlcolor=black,
@@ -93,7 +93,8 @@
 \nobibliography{jv_pubs}
 \endgroup
 
-\bibliographystyle{cv_ecol_lett}
+% \bibliographystyle{cv_ecol_lett}
+\bibliographystyle{cv_prsb}
 
 % ------------------------------------------------------------------------------%
 
@@ -108,8 +109,8 @@
       \begin{center}
         \begin{tabular*}{5.25in}{p{1.5in}@{\hspace{0.25in}}p{2.25in}@{\hspace{0.25in}}p{1.5in}}
           \begin{minipage}{1.5in} \raggedleft
-            \href{mailto:vancleve@nescent.org}{vancleve@nescent.org} \\
-            \href{http://www.santafe.edu/~vancleve}{www.santafe.edu/$\sim$vancleve}
+            \href{http://www.duke.edu/~jv72}{www.duke.edu/$\sim$jv72} \\
+            \href{mailto:vancleve@nescent.org}{vancleve@nescent.org}
           \end{minipage}
           & \begin{minipage}{2.25in} \centering
             National Evolutionary Synthesis Center \\
@@ -142,9 +143,9 @@
   \vspace{1ex}
   \begin{tabular}{@{}p{2.5in}@{}p{2in}l}
     \bfseries National Evolutionary Synthesis Center & \textbf{NESCent Postdoctoral Fellow} & 2013--present \\
-    \hspace{0.5in} (NESCent) Durham, NC & & \\[2ex]
+    \hspace{0.5in} Durham, NC & & \\[2ex]
 
-    \bfseries Santa Fe Institute (SFI) & \textbf{SFI Omidyar Fellow} & 2009--2012 \\
+    \bfseries Santa Fe Institute & \textbf{SFI Omidyar Fellow} & 2009--2012 \\
     \hspace{0.5in} Santa Fe, NM &  & \\[2ex]
     % Postdoctoral research in evolutionary biology and ecology & \\[2ex]
 
@@ -200,8 +201,10 @@
 
   \section{\bf \large \scshape  Publications}
 
-  { \setlength{\parskip}{1.25ex}
-    \bibentry{Van-Cleve2012b}
+  { \setlength{\parskip}{2.5ex}
+    \bibentry{Van-Cleve2013a}
+
+    \bibentry{Van-Cleve2013}
 
     \input{pubs_list.tex}
   }
@@ -209,22 +212,19 @@
   \section{\bf \large \scshape  Preprints and manuscripts in preparation}
 
   { \setlength{\parskip}{1.25ex}
-    \bibentry{Van-Cleve2012d}
-
-    \bibentry{Van-Cleve2012a}
+    \bibentry{Van-Cleve2013b}
   }
-
-
-  \newpage
-
 
 
   % ------------------------------------------------------------------------------%
 
   \pagestyle{fancy}
   \section{\bf \large \scshape  Presentations}
-  \setlength{\parskip}{1.0ex plus 1ex minus .2ex}
+  \setlength{\parskip}{1.5ex plus 1ex minus .2ex}
   \vspace{1ex}
+
+  \hangpara{3em}{1}
+  Evolution Conference, Snowbird, Utah. Concurrent session talk. June 2013.
 
   \hangpara{3em}{1}
   Harvey Mudd College, Department of Biology.  \textbf{Invited Talk}. December 2012.
@@ -286,6 +286,11 @@
   \section{\bf \large \scshape  Teaching Experience}
 
   \begin{compactitem}[]
+  \item NESCent
+    \begin{compactitem}[--]
+    \item Lecturer: Santa Fe Institute Summer Complexity and Modeling Program, Groton School, MA: Summer 2013.
+    \item Mentor: Chloe Atwater, Research Assistant, Santa Fe Institute (Summer--Fall 2013).
+    \end{compactitem}
   \item Santa Fe Institute
     \begin{compactitem}[--]
     \item Lecturer: Santa Fe Institute Complex Systems Summer School (2011--2012)
@@ -312,6 +317,14 @@
 
   % ------------------------------------------------------------------------------%
 
+\newpage
+
+  \section{\bf \large \scshape Grants}
+  \begin{compactitem}
+  \item[2013] Co-PI. Frost Foundation. \$20,000 \\
+    ``Quantifying the Impact of Mentorships on Human and Social Capital in Santa Fe New Mexico''
+  \end{compactitem}
+  
   \section{\bf \large \scshape  Awards and Honors}
 
   \begin{compactitem}
@@ -348,7 +361,7 @@
   \section{\bf \large \scshape  Academic Service}
   \begin{itemize}[]
   \item Member of the American Society of Naturalists and the Society for the Study of Evolution.
-  \item Reviewer: \textit{Proceedings of the National Academy of Sciences}, \textit{Genetics}, \textit{Theoretical Population Biology}, \textit{Proceedings of the Royal Society B}, \textit{The American Naturalist}, \textit{Heredity}, \textit{PLoS Computational Biology}, \textit{Journal of Theoretical Biology}
+  \item Reviewer: \textit{Proceedings of the National Academy of Sciences}, \textit{Genetics}, \textit{Theoretical Population Biology}, \textit{Proceedings of the Royal Society B}, \textit{The American Naturalist}, \textit{Evolution}, \textit{Heredity}, \textit{PLoS Computational Biology}, \textit{Journal of Theoretical Biology}, \textit{Bulletin of Mathematical Biology},
   \end{itemize}
 
   % ------------------------------------------------------------------------------%
