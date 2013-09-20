@@ -1,24 +1,4 @@
-% Copyright (C) 2008 Jeremy Van Cleve
-% 
-%% ---------------------------------------------------------------------------%
-% 
-% Notes:
-% 
-% * To create a new page use: \newpage \opening
-% 
-% * res.cls includes an \address{} command which can be used up to twice,
-% but my address is too long for the format it uses.
-% 
-% * Alternate documentclass statement to put headings in margin:
-% \documentclass[margin,line,11pt,final]{res}
-% 
-% * Can divide publication/presentation list into subsections by year:
-% \section{\bf\small\hspace{8mm}2006}
-% 
-%% ----------------------------------------------------------------------------%
-
-\documentclass[centered,overlapped,line]{res}
-\usepackage[flushleft]{paralist}
+\documentclass[11pt]{article}
 
 % hyperref and bibentry conflict workaround
 \makeatletter
@@ -28,13 +8,13 @@
 \usepackage{bibentry}
 \usepackage{natbib}
 \usepackage{hyperref,doi}
-\usepackage{hanging}
 \usepackage[nodayofweek]{datetime}
 
-% \usepackage{tabularx}
-
-\usepackage{paralist}
-\setlength{\plitemsep}{1ex}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize,1]{label=,leftmargin=0ex,itemsep=0.5ex}
+\setlist[itemize,2]{label=--,itemsep=0.25ex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % XeLaTeX font settings: COMMENT OUT IF NOT RUNNING XeLaTeX
@@ -47,7 +27,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \usepackage[letterpaper]{geometry}
-\geometry{hmargin={1in,1.3in},vmargin={1in,1in},headheight=10pt}
+\geometry{hmargin={1in,1in},vmargin={1in,1in}}
 \hypersetup{
   colorlinks,
   urlcolor=black,
@@ -58,9 +38,7 @@
   pdfkeywords={evolutionary biology ecology population genetics theory}
 }
 
-\sectionskip=2.5ex plus 1ex minus .2ex
-\parskip=1.5ex plus 1ex minus .2ex
-
+\usepackage{amsmath}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
@@ -71,20 +49,22 @@
 \cfoot{\thepage}
 \rfoot{}
 
+\usepackage[parfill]{parskip}
+
+\usepackage{calc}
+\usepackage{marginnote}
+\reversemarginpar
+\usepackage[explicit]{titlesec}
+\titleformat{\section}{\addfontfeature{LetterSpace=10.0} \large \bfseries \scshape}{}{0ex}{$[$ #1}[]
+\titlespacing*{\section}{-2ex}{1.5ex plus 0.5ex minus 0.5ex}{0.25ex plus 0.25ex minus 0.25ex}
+% \titleformat{\subsection}{\bfseries \itshape}{\thesubsection.}{1ex}{#1}
+% \titlespacing{\subsection}{0pt}{1ex plus 0.25ex minus 0.25ex}{0.0ex plus 0.25ex minus 0.25ex}
+% \titleformat{\subsubsection}[runin]{\bfseries}{\roman{subsubsection}}{1ex}{#1.}
+% \titlespacing{\subsubsection}{0pt}{1.5ex plus 0.5ex minus 0.25ex}{1em}
+
 %% ===========================================================================%%
 
 \begin{document}
-% ---------------------------------------------------------------------------
-% Document Specific Customizations
-
-% Change list  indentation
-\setdefaultleftmargin{0em}{2.2em}{1.87em}{1.7em}{1em}{1em}
-
-% Use large bold font for printed name at top of pages
-\renewcommand{\namefont}{\large\textbf}
-
-% Custom commands
-\newcommand{\cbox}[2]{\parbox{#1}{\centering #2}}
 
 % hyperref and bibentry conflict workaround
 \begingroup
@@ -98,60 +78,57 @@
 
 % ------------------------------------------------------------------------------%
 
-\name{\Large \scshape Jeremy Van Cleve}
+\thispagestyle{empty}
 
-\begin{resume}
-  \thispagestyle{empty}
+\begin{center}
+\Large \scshape Jeremy Van Cleve
+\end{center}
 
-  \moveleft\hoffset\vbox{\hrule width 6.5in}
-  \vspace{-1.5ex}
-  \moveleft\hoffset\hbox{\parbox{\textwidth}{
-      \begin{center}
-        \begin{tabular*}{5.25in}{p{1.5in}@{\hspace{0.25in}}p{2.25in}@{\hspace{0.25in}}p{1.5in}}
-          \begin{minipage}{1.5in} \raggedleft
-            \href{http://www.duke.edu/~jv72}{www.duke.edu/$\sim$jv72} \\
-            \href{mailto:vancleve@nescent.org}{vancleve@nescent.org}
-          \end{minipage}
-          & \begin{minipage}{2.25in} \centering
-            National Evolutionary Synthesis Center \\
-            2024 W. Main Street Suite A200 \\
-            Durham, NC 27705
-          \end{minipage}
-          & \begin{minipage}{1.5in} \raggedright
-            (919) 668-4044 {\footnotesize \scshape [phone]} \\
-            (919) 668-9198  {\footnotesize \scshape [fax]}
-          \end{minipage}
-        \end{tabular*}
-      \end{center}}}
-
-  \vspace{-1.5ex}
-  \moveleft\hoffset\vbox{\hrule width 6.5in}
-  \vspace{-1.5ex}
+\rule[0pt]{\textwidth}{1pt}
+\begin{center}
+  \begin{tabular*}{5.75in}{p{1.4in}@{\hspace{0.25in}}p{2.45in}@{\hspace{0.25in}}p{1.4in}}
+    \begin{minipage}{1.4in} \raggedleft
+      \href{http://www.duke.edu/~jv72}{www.duke.edu/$\sim$jv72} \\
+      \href{mailto:vancleve@nescent.org}{vancleve@nescent.org}
+    \end{minipage}
+    & \begin{minipage}{2.45in} \centering
+      National Evolutionary Synthesis Center \\
+      2024 W. Main Street Suite A200 \\
+      Durham, NC 27705
+    \end{minipage}
+    & \begin{minipage}{1.4in} \raggedright
+      (919) 668-4044 {\footnotesize \scshape [phone]} \\
+      (919) 668-9198  {\footnotesize \scshape [fax]}
+    \end{minipage}
+  \end{tabular*}
+\end{center}
+\rule[2pt]{\textwidth}{1pt}
 
   % ------------------------------------------------------------------------------%
 
-  \section{\bf \large \scshape  Education}
-  \vspace{1ex}
-  \begin{tabular}{@{}p{0.5in}@{}p{1.5in}@{}p{2.5in}l}
+  \section{Education}
+
+  \begin{center}
+  \begin{tabular}{@{}p{0.5in}@{}p{1.5in}@{}p{2.5in}r}
     \textbf{Ph.D.} & \textbf{Stanford University} & Department of Biological Sciences & 2009 \\
     & Palo Alto, CA & Advisor: Professor Marcus W. Feldman & \\[2ex]
     \textbf{B.A.} & \textbf{Oberlin College} & Majors in Mathematics and Biology & 2003 \\
     & Oberlin, OH & &  
   \end{tabular}
+\end{center}
 
-  \section{\bf \large \scshape Professional Experience}
-  \vspace{1ex}
-  \begin{tabular}{@{}p{2.5in}@{}p{2in}l}
+  \section{Professional Experience}
+
+  \begin{tabular}{@{}>{\raggedleft\arraybackslash}p{2.5in}@{\hspace{0.25in}}p{2in}r}
     \bfseries National Evolutionary Synthesis Center & \textbf{NESCent Postdoctoral Fellow} & 2013--present \\
+    \bfseries Duke University | UNC | NC State & & \\
     \hspace{0.5in} Durham, NC & & \\[2ex]
 
     \bfseries Santa Fe Institute & \textbf{SFI Omidyar Fellow} & 2009--2012 \\
     \hspace{0.5in} Santa Fe, NM &  & \\[2ex]
-    % Postdoctoral research in evolutionary biology and ecology & \\[2ex]
 
     \bfseries University of Colorado at Boulder & \textbf{Professional Research Assistant} & 2003--2004 \\
     \hspace{0.5in} Boulder, CO & &
-    % % Studied bird species richness in Rocky Mountains using taxonomic databases & 
   \end{tabular}
 
   % \title{\bfseries \scshape Professional Research Assistant}
@@ -199,7 +176,7 @@
 
   % ------------------------------------------------------------------------------%
 
-  \section{\bf \large \scshape  Publications}
+  \section{Publications}
 
   { \setlength{\parskip}{2.5ex}
     \bibentry{Van-Cleve2013a}
@@ -209,125 +186,101 @@
     \input{pubs_list.tex}
   }
 
-  \section{\bf \large \scshape  Preprints and manuscripts in preparation}
+  \section{Preprints and manuscripts in preparation}
 
   { \setlength{\parskip}{1.25ex}
     \bibentry{Van-Cleve2013b}
   }
 
 
-  % ------------------------------------------------------------------------------%
-
   \pagestyle{fancy}
-  \section{\bf \large \scshape  Presentations}
-  \setlength{\parskip}{1.5ex plus 1ex minus .2ex}
-  \vspace{1ex}
+  \section{Presentations}
 
-  \hangpara{3em}{1}
-  Evolution Conference, Snowbird, Utah. Concurrent session talk. June 2013.
+  \begin{itemize}
+  \item Evolution Conference, Snowbird, Utah. Concurrent session talk. June 2013.
 
-  \hangpara{3em}{1}
-  Harvey Mudd College, Department of Biology.  \textbf{Invited Talk}. December 2012.
+  \item Harvey Mudd College, Department of Biology.  \textbf{Invited Talk}. December 2012.
 
-  \hangpara{3em}{1}
-  Evolution Conference, Ottawa, Canada. Concurrent session talk. July 2012.
+  \item Evolution Conference, Ottawa, Canada. Concurrent session talk. July 2012.
 
-  \hangpara{3em}{1}
-  Animal Behavior Society and Human Behavioral and Evolution Society Meetings, Albuquerque, NM.  \\
-  Concurrent session talk.  June 2012.
+  \item Animal Behavior Society and Human Behavioral and Evolution Society Meetings, Albuquerque, NM.  \\
+    Concurrent session talk.  June 2012.
 
-  \hangpara{3em}{1}
-  % ``Prosocial preferences, conformity, and the evolution of behavior within and between groups'' \\
-  University of Lausanne, Switzerland, Department of Ecology and Evolution. \textbf{Invited Talk}. May 2012.
+  \item % ``Prosocial preferences, conformity, and the evolution of behavior within and between groups'' \\
+    University of Lausanne, Switzerland, Department of Ecology and Evolution. \textbf{Invited Talk}. May 2012.
 
-  \hangpara{3em}{1}
-  % ``Prosocial preferences, conformity, and the evolution of behavior within and between groups'' \\
-  Center for Nonlinear Studies, Los Alamos National Laboratory. \textbf{Invited Talk}. April 2012.
+  \item % ``Prosocial preferences, conformity, and the evolution of behavior within and between groups'' \\
+    Center for Nonlinear Studies, Los Alamos National Laboratory. \textbf{Invited Talk}. April 2012.
 
-  \hangpara{3em}{1}
-  % ``Prosocial preferences, conformity, and the evolution of behavior within and between groups'' \\
-  University of Colorado, Boulder, Ecology \& Evolutionary Biology Department. \textbf{Invited Talk}. January 2012.
+  \item % ``Prosocial preferences, conformity, and the evolution of behavior within and between groups'' \\
+    University of Colorado, Boulder, Ecology \& Evolutionary Biology Department. \textbf{Invited Talk}. January 2012.
 
-  \hangpara{3em}{1}
-  % ``Behavioral responses in structured populations pave the way to group adaptation'' \\
-  Ecological Society of America Meeting, Austin, TX. Concurrent session talk. August 2011.
+  \item % ``Behavioral responses in structured populations pave the way to group adaptation'' \\
+    Ecological Society of America Meeting, Austin, TX. Concurrent session talk. August 2011.
 
-  \hangpara{3em}{1}
-  % ``Prosocial preferences and the evolution of behavior within and between groups'' \\
-  University of New Mexico, Computer Science Department.  \textbf{Invited Talk}. November 2010.
+  \item % ``Prosocial preferences and the evolution of behavior within and between groups'' \\
+    University of New Mexico, Computer Science Department.  \textbf{Invited Talk}. November 2010.
 
-  \hangpara{3em}{1}
-  % ``Stochastic switching and the evolution of mutation in asymmetric fitness landscapes '' \\
-  Evolution Conference, Portland, OR. Concurrent session talk. June 2010
+  \item % ``Stochastic switching and the evolution of mutation in asymmetric fitness landscapes '' \\
+    Evolution Conference, Portland, OR. Concurrent session talk. June 2010
 
-  \hangpara{3em}{1}
-  % ``Evolution and epigenetics: genomic imprinting in mammals and stochastic switching in bacteria'' \\
-  National Institute for Mathematical Biology and Synthesis, Knoxville, TN. \textbf{Invited Talk}. March 2010.
+  \item % ``Evolution and epigenetics: genomic imprinting in mammals and stochastic switching in bacteria'' \\
+    National Institute for Mathematical Biology and Synthesis, Knoxville, TN. \textbf{Invited Talk}. March 2010.
 
-  % \hangpara{3em}{1}
-  % % ``Regard for others: the economics and evolution of empathy'' \\
-  % Santa Fe Institute Holiday Tea Talk. December 2009.
+    % \hangpara{3em}{1}
+    % % ``Regard for others: the economics and evolution of empathy'' \\
+    % Santa Fe Institute Holiday Tea Talk. December 2009.
 
-  \hangpara{3em}{1}
-  % ``The Evolution of Cooperation by Mutual Regard'' \\
-  Evolution Conference, Minneapolis, MN. Concurrent session talk, June 2008. \\
-  EVO-WIBO Conference, Port Townsend, WA. Session talk. April 2008. 
+  \item % ``The Evolution of Cooperation by Mutual Regard'' \\
+    Evolution Conference, Minneapolis, MN. Concurrent session talk, June 2008. \\
+    EVO-WIBO Conference, Port Townsend, WA. Session talk. April 2008. 
 
-  \hangpara{3em}{1}
-  % ``Sex-specific selection, sex-linkage and dominance in genomic imprinting'' \\
-  Evolution Conference, Christchurch, New Zealand. Concurrent session talk. June 2007. 
+  \item % ``Sex-specific selection, sex-linkage and dominance in genomic imprinting'' \\
+    Evolution Conference, Christchurch, New Zealand. Concurrent session talk. June 2007. 
 
-  % \hangpara{3em}{1}
-  % ``Sex Role Dynamics: a game theoretic approach to modeling parental investment and sex-role reversal'' \\
-  % Stanford University, graduate student talk, May 24th, 2005.
+    % \hangpara{3em}{1}
+    % ``Sex Role Dynamics: a game theoretic approach to modeling parental investment and sex-role reversal'' \\
+    % Stanford University, graduate student talk, May 24th, 2005.
+  \end{itemize}
 
-  % ------------------------------------------------------------------------------%
+  \newpage
+  \section{Teaching Experience}
 
-  \section{\bf \large \scshape  Teaching Experience}
-
-  \begin{compactitem}[]
+  \begin{itemize}
   \item NESCent
-    \begin{compactitem}[--]
-    \item Lecturer: Santa Fe Institute Summer Complexity and Modeling Program, Groton School, MA: Summer 2013.
+    \begin{itemize}
+    \item Lecturer: Santa Fe Institute Summer Complexity and Modeling Program, \\
+      Groton School, MA (Summer 2013)
     \item Mentor: Chloe Atwater, Research Assistant, Santa Fe Institute (Summer--Fall 2013).
-    \end{compactitem}
+    \end{itemize}
   \item Santa Fe Institute
-    \begin{compactitem}[--]
+    \begin{itemize}
     \item Lecturer: Santa Fe Institute Complex Systems Summer School (2011--2012)
     \item Mentor: Austen Mack-Crane, Brown University, REU student (Summer 2012)
     \item Mentor: Brecia Young, Harvard University, REU student (Summer 2011)
     \item Mentor: Amalie McKee, Case Western Reserve University, REU student (Summer 2010)
     \item Mentor: The Masters Program  (charter high school), Santa Fe, NM (2010--2012)
-    \end{compactitem}
-    \vspace{0.5ex}
+    \end{itemize}
   \item Stanford University
-    \begin{compactitem}[--]
+    \begin{itemize}
     \item Biology Department Teaching Assistant Training Program: Electronic Resource Development; 2008--9
     \item Teaching Consultant for the Stanford Center for Teaching and Learning; 2007--9
     \item Guest Lecturer \& Teaching Assistant, Fundamentals of Molecular Evolution (Biosci 113/244); Spring 2008
     \item Guest Lecturer, Theoretical Population Genetics (Biosci 183); Winter 2008
     \item Teaching Assistant, Plant Biology, Evolution, and Ecology (Biosci 43); Spring 2006
     \item Teaching Assistant, Biostatistics (Biosci 141); Winter 2005
-    \end{compactitem}
-  \end{compactitem}
+    \end{itemize}
+  \end{itemize}
 
-  % ------------------------------------------------------------------------------%
-
-  % \section{\bf \large \scshape  Mentoring }
-
-  % ------------------------------------------------------------------------------%
-
-\newpage
-
-  \section{\bf \large \scshape Grants}
-  \begin{compactitem}
+  \section{Grants}
+  \begin{description}
   \item[2013] Co-PI. Frost Foundation. \$20,000 \\
     ``Quantifying the Impact of Mentorships on Human and Social Capital in Santa Fe New Mexico''
-  \end{compactitem}
+  \end{description}
   
-  \section{\bf \large \scshape  Awards and Honors}
+  \section{Awards and Honors}
 
-  \begin{compactitem}
+  \begin{description}
   \item[2010] Samuel Karlin Prize in Mathematical Biology (Stanford University) 
   \item[2009] National Institutes of Health Postdoctoral Fellowship (declined)
   \item[2008] National Institutes of Health NLM Training Grant Appointment
@@ -336,8 +289,8 @@
   \item[2004] Anne T. and Robert M. Bass Stanford University Graduate Fellowship
   \item[2002] Elected Phi Beta Kappa
   \item[2001] Barry M. Goldwater Scholarship
-  \end{compactitem}
-
+  \end{description}
+  
   % \renewcommand{\arraystretch}{1.1}
   % \begin{tabular}{@{$\ast$ }r@{}l@{\hspace{2ex}}l}
   %   2010 & & Samuel Karlin Prize in Mathematical Biology (Stanford University) \\ 
@@ -358,16 +311,16 @@
 
   % ------------------------------------------------------------------------------%
 
-  \section{\bf \large \scshape  Academic Service}
-  \begin{itemize}[]
+  \section{Academic Service}
+  \begin{itemize}
   \item Member of the American Society of Naturalists and the Society for the Study of Evolution.
   \item Reviewer: \textit{Proceedings of the National Academy of Sciences}, \textit{Genetics}, \textit{Theoretical Population Biology}, \textit{Proceedings of the Royal Society B}, \textit{The American Naturalist}, \textit{Evolution}, \textit{Heredity}, \textit{PLoS Computational Biology}, \textit{Journal of Theoretical Biology}, \textit{Bulletin of Mathematical Biology},
   \end{itemize}
-
+  
   % ------------------------------------------------------------------------------%
 
-  \section{\bf \large \scshape  Media Coverage}
-  \begin{itemize}[]
+  \section{Media Coverage}
+  \begin{itemize}
   \item \textit{Albuquerque Journal} Health section article, June 13, 2011.
   \end{itemize}
 
@@ -375,8 +328,6 @@
 
   \pagestyle{fancy}
   \rfoot{\footnotesize \it last modified \today}
-
-\end{resume}
 
 \end{document}
 
