@@ -12,6 +12,10 @@
 
 \usepackage{array}
 \usepackage{booktabs}
+\aboverulesep=1.5ex
+\belowrulesep=1.5ex
+
+
 \usepackage{enumitem}
 \setlist[itemize,1]{label=,leftmargin=0ex,itemsep=0.5ex}
 \setlist[itemize,2]{label=--,itemsep=0.25ex}
@@ -81,29 +85,27 @@
 \thispagestyle{empty}
 
 \begin{center}
-\Large \scshape Jeremy Van Cleve
-\end{center}
-
-\rule[0pt]{\textwidth}{1pt}
-\begin{center}
   \begin{tabular*}{6.45in}{p{1.75in}@{\hspace{0.25in}}p{2.45in}@{\hspace{0.25in}}p{1.75in}}
+    & \begin{minipage}{2.45in} \centering \Large \scshape Jeremy Van Cleve \end{minipage}
+    & \\[1.5em]
+    \toprule
     \begin{minipage}{1.75in} \raggedleft
-      \href{http://vancleve.theoretical.bio}{vancleve.theoretical.bio} \\
-      \href{mailto:jvancleve@uky.edu}{jvancleve@uky.edu} \\
+      {\href{http://vancleve.theoretical.bio}{vancleve.theoretical.bio} \footnotesize \scshape [web]}\\
+      {\href{mailto:jvancleve@uky.edu}{jvancleve@uky.edu} \footnotesize \scshape [email]} \\
       % \href{http://twitter.com/jeremyvancleve}{Twitter: @jeremyvancleve}
     \end{minipage}
     & \begin{minipage}{2.45in} \centering
-      National Evolutionary Synthesis Center \\
-      2024 W. Main Street Suite A200 \\
-      Durham, NC 27705
+      Department of Biology \\
+      University of Kentucky \\
+      Lexington, KY 40506
     \end{minipage}
     & \begin{minipage}{1.75in} \raggedright
-      (919) 668-4044 {\footnotesize \scshape [phone]} \\
-      (919) 668-9198  {\footnotesize \scshape [fax]}
-    \end{minipage}
+      {(859) 218-3020 \footnotesize \scshape [phone]} \\
+      {(859)257-1717 \footnotesize \scshape [fax]}
+    \end{minipage}\\
+    \bottomrule
   \end{tabular*}
 \end{center}
-\rule[2pt]{\textwidth}{1pt}
 
   % ------------------------------------------------------------------------------%
 
