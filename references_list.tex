@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage[nodayofweek]{datetime} % format date and time
+
+\usepackage[numbers,sort&compress,square]{natbib}
+
+\usepackage[letterpaper]{geometry} % easy way to set margins and paper size
+\geometry{hmargin={1in,1in},vmargin={1in,1in},headheight=14pt,headsep=12pt,headsep=12pt}
+
+\usepackage{amsmath}
+\usepackage{wasysym}
+
+\usepackage{tabularx}
+% define new column types
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X} 
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+\newcolumntype{W}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{y}[1]{>{\raggedright\arraybackslash}#1}
+\newcolumntype{z}[1]{>{\centering\arraybackslash}#1}
+\newcolumntype{w}[1]{>{\raggedleft\arraybackslash}#1}
+\renewcommand{\tabularxcolumn}[1]{>{\arraybackslash}m{#1}}
+
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{setspace}
+
+\usepackage{wrapfig}
+
+\usepackage[xetex]{hyperref}
+\hypersetup{
+  letterpaper,
+  pdfborder={0 0 0},
+  pdftitle={},
+  pdfauthor={Jeremy Van Cleve},
+  pdfcreator={Aquamacs and XeLaTeX}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% XeLaTeX font settings: COMMENT OUT IF NOT RUNNING XeLaTeX
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Adobe Garamond Pro}
+\setsansfont[Scale=MatchLowercase]{Myriad Pro}
+\setmonofont[Scale=MatchLowercase]{Monaco}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% custom section titles
+\usepackage[explicit]{titlesec}
+\renewcommand{\thesection}{\Roman{section}}
+\titleformat{\section}{\large \bfseries \scshape}{\thesection.}{1ex}{#1}
+\titlespacing{\section}{0pt}{1.5ex plus 0.5ex minus 0.5ex}{0.5ex plus 0.5ex minus 0.5ex}
+\titleformat{\subsection}{\bfseries \itshape}{(\arabic{subsection})}{1ex}{#1}
+\titlespacing{\subsection}{0pt}{1ex plus 0.25ex minus 0.25ex}{0.0ex plus 0.25ex minus 0.25ex}
+
+% multiple columns
+\usepackage{multicol}
+\columnseprule=0.4pt
+\multicolsep=0.5ex plus 0.1ex minus 0.1ex
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\fancypagestyle{firstpage}{%
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\large \bfseries \scshape List of References -- Jeremy Van Cleve}
+\fancyfoot[C]{} % except the center
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}}
+\thispagestyle{firstpage}
+
+\vspace{2em}
+\begin{center}
+\begin{tabular}{lp{2.5in}p{2.in}}
+Reference & Position & E-mail / Address \\
+\midrule
+Dr. Marcus W. Feldman & Stanford University \newline Professor & 
+\href{mailto:mfeldman@stanford.edu}{mfeldman@stanford.edu} \newline
+428 Herrin Labs \newline
+Department of Biological Sciences \newline
+Stanford University \newline
+Stanford, CA 94305-5020\\[5ex]
+Dr. Joan Roughgarden & Stanford University | University of Hawaii \newline Professor (Emerita) | Adjunct Professor & 
+\href{mailto:joan.roughgarden@stanford.edu}{joan.roughgarden@stanford.edu} \newline
+5241 Wili Road\newline
+Kapa'a HI 96746\\[5ex]
+Dr. Allen Rodrigo & Duke University \newline Professor & 
+\href{mailto:a.rodrigo@duke.edu}{a.rodrigo@duke.edu} \newline
+2024 W. Main Street \newline
+Suite A200 \newline
+Durham, NC 27705 \\[5ex]
+Dr. Maria Servedio & University of North Carolina, Chapel Hill \newline Associate Professor & 
+\href{mailto:servedio@email.unc.edu}{servedio@email.unc.edu} \newline
+Department of Biology \newline
+CB\# 3280, Coker Hall \newline
+University of North Carolina at Chapel Hill \newline
+Chapel Hill, NC 27599 \\
+%Dr. Robert Guralnick & Associate Professor, University of Colorado at Boulder & robert.guralnick@colorado.edu \\
+%Dr. Laurent Lehmann & Assistant Professor, University of Lausanne & laurent.lehmann@unil.ch \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
