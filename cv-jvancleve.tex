@@ -17,8 +17,11 @@
 
 
 \usepackage{enumitem}
-\setlist[itemize,1]{label=,leftmargin=0ex,itemsep=0.25ex}
-\setlist[itemize,2]{label=--,itemsep=0.2ex}
+\newlist{publist}{itemize}{1}
+\setlist[description, 1]{ itemsep=0.0ex, parsep=1ex }
+\setlist[itemize, 1]{ label=, leftmargin=0ex, itemsep=0.0ex, parsep=1ex }
+\setlist[itemize, 2]{ label=--, itemsep=0.0ex, parsep=0.5ex }
+\setlist[publist]{ label=, leftmargin=2ex, itemindent=-2ex, itemsep=0.0ex, parsep=2ex }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % XeLaTeX font settings: COMMENT OUT IF NOT RUNNING XeLaTeX
@@ -59,7 +62,7 @@
 \reversemarginpar
 \usepackage[explicit]{titlesec}
 \titleformat{\section}{\addfontfeature{LetterSpace=10.0} \Large \bfseries \scshape}{}{0ex}{#1}[]
-\titlespacing*{\section}{-2ex}{1.5ex plus 0.5ex minus 0.5ex}{0.25ex plus 0.25ex minus 0.25ex}
+\titlespacing*{\section}{-2ex}{1.0ex plus 0.5ex minus 0.5ex}{0.25ex plus 0.25ex minus 0.25ex}
 % \titleformat{\subsection}{\bfseries \itshape}{\thesubsection.}{1ex}{#1}
 % \titlespacing{\subsection}{0pt}{1ex plus 0.25ex minus 0.25ex}{0.0ex plus 0.25ex minus 0.25ex}
 % \titleformat{\subsubsection}[runin]{\bfseries}{\roman{subsubsection}}{1ex}{#1.}
@@ -89,7 +92,7 @@
     \begin{minipage}{1.75in} \raggedleft
       {\href{http://vancleve.theoretical.bio}{vancleve.theoretical.bio} \footnotesize \scshape [web]}\\
       {\href{mailto:jvancleve@uky.edu}{jvancleve@uky.edu} \footnotesize \scshape [email]} \\
-      % \href{http://twitter.com/jeremyvancleve}{Twitter: @jeremyvancleve}
+      {\href{http://twitter.com/jeremyvancleve}{@jeremyvancleve} \footnotesize \scshape [twitter]} \\
     \end{minipage}
     & \begin{minipage}{2.45in} \centering
       Department of Biology \\
@@ -180,22 +183,25 @@
   % ------------------------------------------------------------------------------%
 
   \section{Publications {\small (*=co-first/corresponding author)}}
-
-  { \setlength{\parskip}{2.5ex}
-
-    \input{pubs_list.tex}
-  }
-
-\section{Preprints}
-
-  { \setlength{\parskip}{1.25ex}
-    \bibentry{HokeCriticalPeriod}
+  
+  \begin{publist}
     
-    \bibentry{AndrisSocialCapital}
+    \input{pubs_list.tex}
+    
+  \end{publist}
+  
+  \section{Preprints}
+  
+  \begin{publist}
+    
+  \item \bibentry{HokeCriticalPeriod}
+    
+  \item \bibentry{AndrisSocialCapital}
+    
+  \end{publist}
+  
 
-}
-
-  % \section{Manuscripts in preparation}
+% \section{Manuscripts in preparation}
 
 %   { \setlength{\parskip}{1.25ex}
 %     
@@ -232,6 +238,7 @@
 
   \section{Invited Talks}
   \begin{itemize}
+  \item Georgia Institute of Technology, School of Biological Sciences, October 2016.
   \item University of Kentucky, Center for Ecology, Evolution and Behavior Annual Symposium (Keynote). May 2015.
   \item University of Pennsylvania, Department of Biology, April 2014.
   \item North Carolina State University, Biomathematics Graduate Program, April 2014
@@ -254,7 +261,8 @@
   \section{Conferences}
 
   \begin{itemize}
-    \item National Academies Keck Futures Initiative, ``Collective Behavior'', Irvine, CA. November 2014.
+  \item Evolution Conference, Austin, Texas. Concurrent session talk. June 2016.
+  \item National Academies Keck Futures Initiative, ``Collective Behavior'', Irvine, CA. November 2014.
   \item Evolution Conference, Raleigh, North Carolina. Concurrent session talk. June 2014.
   \item Toulouse Economics \& Biology Workshop, Institute for Advanced Study in Toulouse, France. Poster. May 2014.
   \item American Society of Naturalists, Asilomar, CA. Concurrent session talk. January 2014.
@@ -276,25 +284,27 @@
   \section{Teaching Experience}
 
   \begin{itemize}
-  \item University of Kentucky
+  \item University of Kentucky (UK)
     \begin{itemize}
-    \item Fall 2015. BIO 770 Graudate Seminar: ``Dr. Pangloss reborn? Natural selection in evolution''
-    \item Spring 2016. BIO 325 Ecology
-    \item Mentor: Hugh Ronald, Paul Laurence Dunbar High School, Lexington, KY (2015--2016)
+    \item Fall 2016. BIO 770 Graduate Seminar.``Data Wrangling and Visualization Using R''
+    \item Spring 2016. BIO 325. ``Ecology''
+    \item Fall 2015. BIO 770 Graduate Seminar. ``Dr. Pangloss reborn? Natural selection in evolution''
+    \item Ph.D. Committee Member: Luc A. Dunoyer (UK, 2016--); Emily E. Bendall (UK, 2016--); M. Grayson McWhorter (UK, 2016--)
+    \item Undergraduate Mentor: Lauren Lawless (UK, 2016--)
+    \item High School Mentor: Hugh Ronald (Paul Laurence Dunbar High School, 2015--2016)
     \end{itemize}
-  \item NESCent
+  \item National Evolutionary Synthesis Center / Duke University
     \begin{itemize}
     \item Lecturer: Santa Fe Institute Summer Complexity and Modeling Program, \\
       Groton School, MA (Summer 2013)
     \item Mentor: Chloe Atwater, Research Assistant, Santa Fe Institute (Summer--Fall 2013).
     \end{itemize}
-  \item Santa Fe Institute
+  \item Santa Fe Institute (SFI)
     \begin{itemize}
     \item Lecturer: Santa Fe Institute Complex Systems Summer School (2011--2012)
-    \item Mentor: Austen Mack-Crane, Brown University, REU student (Summer 2012)
-    \item Mentor: Brecia Young, Harvard University, REU student (Summer 2011)
-    \item Mentor: Amalie McKee, Case Western Reserve University, REU student (Summer 2010)
-    \item Mentor: The Masters Program  (charter high school), Santa Fe, NM (2010--2012)
+    \item SFI Research Experience for Undergraduates Mentor: Austen Mack-Crane (Brown University, 2012); Brecia Young (Harvard University, 2011); 
+      Amalie McKee (Case Western Reserve University, 2010)
+    \item High School Mentor. The Masters Program Charter High School, Santa Fe, NM (2010--2012)
     \end{itemize}
   % \item Stanford University
   %   \begin{itemize}
