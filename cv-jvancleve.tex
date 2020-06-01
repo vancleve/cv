@@ -17,11 +17,13 @@
 
 
 \usepackage{enumitem}
-\newlist{publist}{itemize}{1}
 \setlist[description, 1]{ itemsep=0.0ex, parsep=1ex }
 \setlist[itemize, 1]{ label=, leftmargin=0ex, itemsep=0.0ex, parsep=1ex }
 \setlist[itemize, 2]{ label=--, itemsep=0.0ex, parsep=0.5ex }
+\newlist{publist}{itemize}{1}
 \setlist[publist]{ label=, leftmargin=2ex, itemindent=-2ex, itemsep=0.0ex, parsep=2ex }
+\newlist{compactlist}{itemize}{1}
+\setlist[compactlist]{ label=, leftmargin=2ex, itemindent=-2ex, itemsep=0.0ex, parsep=0.5ex }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % XeLaTeX font settings: COMMENT OUT IF NOT RUNNING XeLaTeX
@@ -46,14 +48,17 @@
 
 \usepackage{amsmath}
 \usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+ \fancyhf{} % clear all header and footer fields
+ \fancyfoot[R]{\footnotesize \it last modified \today} % put last modified in lower right
+ \renewcommand{\headrulewidth}{0pt}
+ \renewcommand{\footrulewidth}{0pt}}
 \pagestyle{fancy}
-\lhead{}
-\chead{}
-\rhead{\footnotesize \bfseries \scshape Jeremy Van Cleve}
+\fancyhead[L,C]{}
+\fancyhead[R]{\footnotesize \bfseries \scshape Jeremy Van Cleve}
 \renewcommand{\headrulewidth}{0.0pt}
-\lfoot{}
-\cfoot{\thepage}
-\rfoot{}
+\fancyfoot[L,R]{}
+\fancyfoot[C]{\thepage}
 
 \usepackage[parfill]{parskip}
 
@@ -82,7 +87,7 @@
 
 % ------------------------------------------------------------------------------%
 
-\thispagestyle{empty}
+\thispagestyle{plain}
 
 \begin{center}
   \begin{tabular*}{6.45in}{p{1.75in}@{\hspace{0.25in}}p{2.45in}@{\hspace{0.25in}}p{1.75in}}
@@ -137,52 +142,7 @@
     \hspace{0.5in} Boulder, CO & &
   \end{tabular}
 
-  % \title{\bfseries \scshape Professional Research Assistant}
-  % \dates{2003-2004}
-  % \employer{University of Colorado at Boulder}
-  % \location{Boulder, CO} 
-  % \begin{position} \\[-4mm] 
-  %   Studied bird species richness in Rocky Mountains using taxonomic databases with Professor Robert Guralnick \\
-  %   and wrote simulations for single-molecule fluorescence experiments with Professor Arthur Pardi.
-  % \end{position}
-
-  % \title{Professional Research Assistant}
-  % \dates{2003-2004}
-  % \employer{University of Colorado at Boulder  \\ with Professor Arthur Pardi}
-  % \location{Boulder, CO} 
-  % \begin{position} \\[-4mm] 
-  %   \\ Wrote software to simulate and analyze data from single-molecule fluorescence experiments.
-  % \end{position} 
-
-  % \title{NSF Research Experience for Undergrads}
-  % \dates{Summer 2002}
-  % \employer{University of Colorado at Boulder \\ with Professor Roger Pilke Jr.}
-  % \location{Boulder, CO}
-  % \begin{position} \\[-4mm] 
-  %   \\ Studied the scientific, political, and philosophical elements of climate change.\\
-  %   Created policy oriented analysis of the role of prediction in the Yucca Mountain Project. 
-  % \end{position}
-
-  % \title{NSF Research Experience for Undergrads}
-  % \dates{Summer 2001}
-  % \employer{The Santa Fe Institute with Dr. Ludo Pagie}
-  % \location{Santa Fe, NM}
-  % \begin{position} \\[-4mm] 
-  %   Project title: “Diversity and evolutionary dynamics in an iron-deprived microbial community” \\
-  %   Created spatially explicit and analytical simulations in order to study evolutionary dynamics. 
-  % \end{position}
-
-  % \title{Intern}
-  % \dates{Summers 1999 \& 2000}
-  % \employer{Los Alamos National Laboratory \\ with Dr. Catherine Macken}
-  % \location{Los Alamos, NM}
-  % \begin{position} \\[-4mm] 
-  %   \\ Wrote phylogenetic software packages in Perl and revamped old packages for use over the Internet.
-  % \end{position}
-
-  % ------------------------------------------------------------------------------%
-
-  \section{Publications {\small (*=co-first/corresponding author)}}
+  \section{Publications {\small (*=co-first author)}}
   
   \begin{publist}
     
@@ -193,28 +153,19 @@
   \section{Preprints}
   
   \begin{publist}
-    
-  \item \bibentry{Kessinger2018Draft}
-    
+
   \item \bibentry{HokeCriticalPeriod}
     
-  \item \bibentry{AndrisSocialCapital}
+  \item \bibentry{Kessinger2018Draft}
+        
+  \item \bibentry{AndrisSocialCapital2016}
     
   \end{publist}
   
-
-% \section{Manuscripts in preparation}
-
-%   { \setlength{\parskip}{1.25ex}
-%     
-    
-    % \bibentry{Van-ClevePlasticity}
-
-    % \bibentry{Van-CleveImprintEpi}
-% }
-
   \section{Grants}
   \begin{description}
+  \item[2020--2024] Co-PI. National Science Foundation. \$793,508\\
+    ``Uneasy alliances: emergent properties and feedback mechanisms among manipulative endosymbiotic communities''
   \item[2019--2024] PI. National Science Foundation. \$781,397\\
     ``CAREER: Genetic architecture and the construction of complex social traits''
   \item[2015--2017] PI. National Academy of Sciences and Keck Foundation -- Futures Initiative. \$50,000\\
@@ -240,9 +191,9 @@
   \item[2001] Barry M. Goldwater Scholarship
   \end{description}
 
-
   \section{Invited Talks}
-  \begin{itemize}
+  \begin{compactlist}
+  \item University of Tennessee, National Institute for Mathematical and Biological Synthesis, September 2019.
   \item Washington University, Department of Biology, November 2017.
   \item University of Kentucky, Department of Geography, November 2017.
   \item Georgia Institute of Technology, School of Biological Sciences, October 2016.
@@ -263,15 +214,18 @@
     University of New Mexico, Computer Science Department. November 2010.
   \item % ``Evolution and epigenetics: genomic imprinting in mammals and stochastic switching in bacteria'' \\
     National Institute for Mathematical Biology and Synthesis, Knoxville, TN. March 2010.
-  \end{itemize}
-  
+  \end{compactlist}  
+
   \section{Conferences}
 
-  \begin{itemize}
+  \begin{compactlist}
+  \item American Society of Naturalists Conference, Concurrent session talk. January 2020.
+  \item Evolution Conference, Providence, Rhode Island. Concurrent session talk. June 2019.
   \item 2nd Joint Congress on Evolutionary Biology, Poster. August 2018.
   \item American Society of Naturalists Conference, Concurrent session talk. January 2018.
   \item Evolution Conference, Austin, Texas. Concurrent session talk. June 2017.
-  \item Society for Integrative and Comparative Biology, New Orleans, Louisiana. Invited symposium talk. January 2017.
+  \item Society for Integrative and Comparative Biology, New Orleans, Louisiana.\\
+    Invited symposium talk. January 2017.
   \item Evolution Conference, Austin, Texas. Concurrent session talk. June 2016.
   \item National Academies Keck Futures Initiative, ``Collective Behavior'', Irvine, CA. November 2014.
   \item Evolution Conference, Raleigh, North Carolina. Concurrent session talk. June 2014.
@@ -281,31 +235,27 @@
   \item Evolution Conference, Ottawa, Canada. Concurrent session talk. July 2012.
   \item Animal Behavior Society and Human Behavioral and Evolution Society Meetings, Albuquerque, NM.  \\
     Concurrent session talk.  June 2012.
-  \item % ``Behavioral responses in structured populations pave the way to group adaptation'' \\
-    Ecological Society of America Meeting, Austin, TX. Concurrent session talk. August 2011.
-  \item % ``Stochastic switching and the evolution of mutation in asymmetric fitness landscapes '' \\
-    Evolution Conference, Portland, OR. Concurrent session talk. June 2010
-  \item % ``The Evolution of Cooperation by Mutual Regard'' \\
-    Evolution Conference, Minneapolis, MN. Concurrent session talk, June 2008. \\
-    EVO-WIBO Conference, Port Townsend, WA. Session talk. April 2008. 
-  \item % ``Sex-specific selection, sex-linkage and dominance in genomic imprinting'' \\
-    Evolution Conference, Christchurch, New Zealand. Concurrent session talk. June 2007. 
-  \end{itemize}
-
+  \item Ecological Society of America Meeting, Austin, TX. Concurrent session talk. August 2011.
+  \item Evolution Conference, Portland, OR. Concurrent session talk. June 2010
+  \item Evolution Conference, Minneapolis, MN. Concurrent session talk, June 2008.
+  \item EVO-WIBO Conference, Port Townsend, WA. Session talk. April 2008. 
+  \item Evolution Conference, Christchurch, New Zealand. Concurrent session talk. June 2007. 
+  \end{compactlist}
+  
   \section{Teaching Experience}
 
   \begin{itemize}
   \item University of Kentucky (UK)
     \begin{itemize}
-    \item Fall 2017. BIO 425 Undergraduate Seminar. ``Reconstructing Human History with Genetics''
+    \item Fall 2017, 2019. BIO 425 Undergraduate Seminar. ``Reconstructing Human History with Genetics''
     \item Fall 2016, 2018. BIO 770 Graduate Seminar.``Data Wrangling and Visualization Using R''
-    \item Spring 2016--2019. BIO 325. ``Ecology''
+    \item Spring 2016--2020. BIO 325. ``Ecology''
     \item Fall 2015. BIO 770 Graduate Seminar. ``Dr. Pangloss reborn? Natural selection in evolution''
-    \item Postdoctoral Fellow Mentor: Dr. Taylor Kessinger (UK, 2016--)
+    \item Postdoctoral Fellow Mentor: Dr. Taylor Kessinger (UK, 2016--2019); Dr. Daniel Priego Espinosa (UK, 2020--)
     \item Ph.D. Advisor: Luc A. Dunoyer (UK, 2017--); Kathryn Green (UK, 2019--)
-    \item Ph.D. Committee Member: Emily E. Bendall (UK, 2016--); M. Grayson McWhorter (UK, 2016--); Kara Jones (UK, 2017--); Megan Thomas (UK, 2018--); Mariah Donohue (UK, 2019--); Derek Filipek (UK, 2019--)
-     \item M.S. Committee Member: James Giordano (UK, 2018)
-    \item Undergraduate Mentor: Lauren Lawless (UK, 2016--)
+    \item Ph.D. Committee Member: Emily E. Bendall (UK, 2016--2020); Kara Jones (UK, 2017--); Megan Thomas (UK, 2018--2019); Mariah Donohue (UK, 2019--); Kaylynne Glover (UK, 2019--)
+     \item M.S. Committee Member: James Giordano (UK, 2018); M. Grayson McWhorter (UK, 2016--2019); 
+    \item Undergraduate Mentor: Lauren Lawless (UK, 2016--2017); Haley Holtmann (UK, 2019); Evan Yang (UK, 2019--)
     \item High School Mentor: Hugh Ronald (Paul Laurence Dunbar High School (PLDHS), 2015--2016); Blake Jaeger (PLDHS, 2016--2018); Max Bograd (PLDHS, 2017--2019); Parker Smith (PLDHS, 2018--); Maanasa Muthukrishnan (PLDHS, 2019--)
     \end{itemize}
   \item National Evolutionary Synthesis Center / Duke University
@@ -356,7 +306,7 @@
   \begin{itemize}
     \item Associate Editor (2019--2022), American Naturalist
     \item Associate Editor (2016--2021), Theoretical Population Biology.
-    \item Reviewer: \textit{Nature Communications}, \textit{Proceedings of the National Academy of Sciences}, \textit{Genetics}, \textit{Theoretical Population Biology}, \textit{Proceedings of the Royal Society B}, \textit{Philosophical Transactions of the Royal Society B}, \textit{The American Naturalist}, \textit{Evolution}, \textit{Evolutionary Ecology}, \textit{Evolutionary Biology}, \textit{Biological Reviews}, \textit{Behavioral Ecology}, \textit{Heredity}, \textit{Journal of Heredity}, \textit{PLoS Computational Biology}, \textit{PLoS Genetics}, \textit{PLoS ONE}, \textit{Journal of Theoretical Biology}, \textit{Bulletin of Mathematical Biology}, \textit{Journal of the Royal Society Interface}, \textit{Royal Society Open Science}, \textit{BMC Evolutionary Biology}, \textit{Ecological Complexity}, \textit{Frontiers in Ecology and Evolution}
+    \item Reviewer: \textit{Nature Communications}, \textit{Proceedings of the National Academy of Sciences}, \textit{Genetics}, \textit{Theoretical Population Biology}, \textit{Proceedings of the Royal Society B}, \textit{Philosophical Transactions of the Royal Society B}, \textit{The American Naturalist}, \textit{Evolution}, \textit{Evolutionary Ecology}, \textit{Evolutionary Biology}, \textit{Biological Reviews}, \textit{Behavioral Ecology}, \textit{Heredity}, \textit{Journal of Heredity}, \textit{PLoS Computational Biology}, \textit{PLoS Genetics}, \textit{PLoS ONE}, \textit{Journal of Theoretical Biology}, \textit{Bulletin of Mathematical Biology}, \textit{Journal of the Royal Society Interface}, \textit{Royal Society Open Science}, \textit{BMC Evolutionary Biology}, \textit{Ecological Complexity}, \textit{Frontiers in Ecology and Evolution}, \textit{Frontiers in Psychology}
   \item Member of the American Society of Naturalists and the Society for the Study of Evolution.
   \end{itemize}
   
@@ -368,9 +318,6 @@
   \end{itemize}
 
   % ------------------------------------------------------------------------------%
-
-  \pagestyle{fancy}
-  \rfoot{\footnotesize \it last modified \today}
 
 \end{document}
 
